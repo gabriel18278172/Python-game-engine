@@ -2,6 +2,7 @@
 
 from .assets import AssetManager
 from .core import Game, Scene
+from .demo import DemoState, build_demo_payload, build_demo_state
 from .ecs import Component, Entity, System, Transform, Velocity
 from .events import Event, EventBus
 from .input import InputState
@@ -18,6 +19,7 @@ __all__ = [
     "Color",
     "Component",
     "ConsoleRenderer",
+    "DemoState",
     "Entity",
     "Event",
     "EventBus",
@@ -29,8 +31,10 @@ __all__ = [
     "Transform",
     "Vector2",
     "Velocity",
+    "build_demo_payload",
+    "build_demo_state",
     "clamp",
     "lerp",
 ]
 
-__version__ = "0.1.0"
+from .version import __version__

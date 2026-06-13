@@ -64,3 +64,27 @@ python -m compileall pyengine examples tests
 ```
 
 The engine intentionally avoids mandatory third-party runtime dependencies so it can be embedded in tools, teaching projects, terminal games, or custom graphical frontends. Add platform adapters such as Pygame, Arcade, or pyglet on top of the core abstractions when you need windowing, audio, or GPU-backed rendering.
+
+## Deploy on Vercel
+
+This repository includes a static landing page plus a Python Vercel Function, so it can be deployed directly to Vercel.
+
+```bash
+npm install
+npm run dev
+# or deploy to production
+npm run deploy
+```
+
+Deployment files:
+
+- `index.html` is the static frontend.
+- `api/index.py` is the Python serverless function. Vercel recognizes Python files in the `api/` directory that expose a `handler` subclass of `BaseHTTPRequestHandler`.
+- `vercel.json` configures function limits and rewrites `/api` to the Python function.
+- `requirements.txt` is present for Vercel's Python installer; the engine currently has no required runtime packages.
+
+The demo endpoint accepts an optional `frames` query parameter:
+
+```bash
+curl https://your-project.vercel.app/api?frames=24
+```
