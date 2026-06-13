@@ -1,0 +1,13 @@
+{
+  "name": "python-game-engine-vercel-demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel deploy --prod",
+    "test": "python -m pytest"
+  },
+  "devDependencies": {
+    "vercel": "latest"
+  }
+}
