@@ -81,6 +81,7 @@ Deployment files:
 - `index.html` is the static frontend.
 - `api/index.py` is the Python serverless function. Vercel recognizes Python files in the `api/` directory that expose a `handler` subclass of `BaseHTTPRequestHandler`.
 - `vercel.json` configures function limits and rewrites `/api` to the Python function.
+- `pyproject.toml` sets `tool.vercel.entrypoint = "api/index.py"` so Vercel can identify the Python entrypoint reliably.
 - `requirements.txt` is present for Vercel's Python installer; the engine currently has no required runtime packages.
 
 The demo endpoint accepts an optional `frames` query parameter:
